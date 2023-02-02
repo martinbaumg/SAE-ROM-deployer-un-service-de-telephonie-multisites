@@ -1,29 +1,25 @@
 \documentclass[12pt, a4paper]{article}
 \usepackage[francais]{babel}
-\usepackage{pgfplots}
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage[T1]{fontenc}
 \usepackage{listings}
 \usepackage{geometry}
-\usepackage{minted}
-\usepackage{array,multirow,makecell}
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
-\setcellgapes{1pt}
-\makegapedcells
+
+% \usepackage{mathpazo} --> Police à utiliser lors de rapports plus sérieux
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{}
 \rhead{}
 \chead{}
 \rfoot{\thepage}
-\lfoot{}
+\lfoot{Martin Baumgaertner}
 \cfoot{}
 
 \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\listingscaption}{Code}
-\renewcommand{\listoflistingscaption}{Table des codes}
-% \usepackage{mathpazo} --> Police à utiliser lors de rapports plus sérieux
+\renewcommand{\footrulewidth}{0.4pt}
 
 \begin{document}
 \begin{titlepage}
@@ -45,8 +41,8 @@
 \tableofcontents
 \newpage
 \section*{Contexte}
-L'objectif de CETTE SAE et de créer un service de téléphonies "multi-sites". Je
-m'explique. Nous avons à disposition, un serveur Asterisk qui est un serveur de
+L'objectif de cette SAE et de créer un service de téléphonies "multi-sites". Je
+m'explique. Nous allons devoir créer, un serveur Asterisk qui est un serveur de
 téléphonie IP. Ce serveur est installé sur une machine virtuelle Debian11. Nous
 avons aussi à disposition, 2 téléphones IP matériel qui sont des téléphones SIP. Ces
 téléphones sont connectés dans le même réseau que notre serveur IPBX bien entendu. 
@@ -65,7 +61,7 @@ le softphone pour le secretariat.\\
 \section{Objectif 1}
 \subsection{Configuration Serveur IPBX}
 	\subsubsection{Créer une machine virtuelle Debian11}
-	Pour cette SAE, j'ai décidé de choisir d'utiliser WMWare Workstation car c'était
+	Pour cette SAE, j'ai décidé de choisir d'utiliser VMWare Workstation car c'était
 	le logiciel que nous utilisions en cours surtout pendant les TP réseaux en première
 	année. J'ai donc crée une VM Debian11. 
 
@@ -87,27 +83,57 @@ le softphone pour le secretariat.\\
 	Premièrement, \textbf{pjsip.conf} :
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.8\textwidth]{img/pjsip.png}
+		\includegraphics[width=0.6\textwidth]{img/pjsip.png}
 		\caption{Configuration de pjsip.conf}
 		\label{fig:pjsip}
-	\end{figure}
+	\end{figure}\\
+	Ce sont des entrées de configuration pour la définition d'un transport 
+	PJSIP dans le fichier de configuration d'Asterisk.
+	\begin{itemize}
+		\item \textbf{[transport-udp]} définit un nom pour le transport, "transport-udp" en l'occurrence.
+		\item \textbf{type = transport} indique le type de l'objet de configuration. Ici, il s'agit d'un transport PJSIP.
+		\item \textbf{protocol = udp} définit le protocole de transport utilisé, en l'occurrence l'UDP (User Datagram Protocol).
+		\item \textbf{bind = 0.0.0.0} définit l'interface réseau sur laquelle le transport écoutera les connexions. La valeur "0.0.0.0" signifie que le transport écoutera sur toutes les interfaces disponibles.
+	\end{itemize}
 
-	\newpage
+	\newpage 
+	
+
 	Puis, \textbf{pjsip wizard.conf} :
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.4\textwidth]{img/wizard.png}
 		\caption{Configuration de pjsip wizard.conf}
 		\label{fig:wiz}
-	\end{figure}
+	\end{figure}\\
 
 	Nous avons ici donc la configuration de tous les téléphones. A chaque fois, j'ai
 	donc déclaré un téléphone avec son numéro de téléphone, son mot de passe et son
 	nom d'utilisateur. Certaines lignes permettent de faire différentes choses
-	essentielles au bon fonctionnement du serveur Asterisk. Comme par exmeple, 
-	\texttt{aor/remove existing = 1} qui permet de
-	supprimer les anciennes configurations qui auraient pu être associés au même nom.\\
+	essentielles au bon fonctionnement du serveur Asterisk, je vais détailler 
+	toutes les explications à la page suivante. 
 
+	\subsubsection*{Explication des lignes de configuration}
+	Je vais prendre pour exemple l'utilisateur \textbf{[TL1]} car c'est après
+	assez similaire pour les autres déclarations d'utilisateurs. 
+
+	\begin{itemize}
+		\item \textbf{[TL1]} : définit un nom pour l'endpoint, "TL1" en l'occurrence.
+		\item \textbf{accepts\_auth = yes} et \textbf{accepts\_registrations = yes} autorisent l'authentification et l'enregistrement des utilisateurs pour cet endpoint.
+		\item \textbf{transport = transport-udp} définit le transport PJSIP à utiliser pour acheminer les appels à travers le réseau pour cet endpoint.
+		\item \textbf{inbound\_auth/type = userpass} définit le type d'authentification pour les appels entrants à cet endpoint, en l'occurrence l'authentification par nom d'utilisateur et mot de passe.
+		\item \textbf{inbound\_auth/username = TL1} et \textbf{inbound\_auth/password = toto} définissent le nom d'utilisateur et le mot de passe pour l'authentification.
+		\item \textbf{endpoint/allow = !all,alaw} définit les codecs audio autorisés pour les appels entrant et sortant à partir de cet endpoint. \textbf{alaw} est un codec audio couramment utilisé et \textbf{!all} signifie que tous les autres codecs ne sont pas autorisés.
+		\item \textbf{aor/max\_contacts = 1} et \textbf{aor/remove\_existing = 1} définissent les paramètres de gestion des connexions pour cet endpoint. \textbf{Aor/max\_contacts = 1} signifie qu'un seul contact peut être enregistré pour cet endpoint à tout moment, tandis que \textbf{aor/remove\_existing = 1} signifie que les connexions existantes seront supprimées lorsqu'une nouvelle connexion est établie.
+		\item \textbf{endpoint/call\_group = 1} et \textbf{endpoint/pickup\_group = 1} définissent les groupes d'appels et de prise en charge pour cet endpoint. Les numéros d'identification des groupes peuvent varier selon votre configuration.\\
+	\end{itemize}
+
+
+	Un \textbf{endpoint} est peut être un téléphone IP, un softphone, 
+	une interface de téléphonie sur un ordinateur, ou tout autre appareil 
+	capable de communiquer avec le système de téléphonie Asterisk.
+	
+	\newpage
 	\subsubsection{Pour le service IPBX, créer le plan de numérotation}
 	J'ai donc crée le plan de numérotation de la même manière que nous l'avons vu en cours
 	et en TP comme peut en témoigner la capture d'écran suivante en rajoutant bien 
@@ -117,7 +143,21 @@ le softphone pour le secretariat.\\
 		\includegraphics[width=0.7\textwidth]{img/extensions.png}
 		\caption{Configuration de extensions.conf}
 		\label{fig:ext}
-	\end{figure}
+	\end{figure}\\
+	J'ai choisi de réutiliser dans un premier temps les numéros que l'on utilisait
+	en cours pour me faciliter la compréhension. Ce sont des numéros, que j'ai à terme 
+	modifié en 1, 2 et 3.\\
+
+	\textbf{Exten => 555,1} définit le numéro de l'extension à 555. Lorsqu'un 
+	appel est effectué à cet extension, les instructions suivantes seront 
+	exécutées. \textbf{Dial(PJSIP/TM1)} est l'instruction pour composer un 
+	appel. \textbf{Dial} est une commande intégrée d'Asterisk qui permet de 
+	composer un appel vers une destination donnée. \textbf{PJSIP/TM1} est la 
+	destination de l'appel.
+	
+	\textbf{PJSIP} désigne le protocole de téléphonie IP utilisé 
+	(dans ce cas, PJSIP) et \textbf{TM1} est le nom de l'endpoint ou 
+	de l'utilisateur auquel l'appel doit être dirigé.
 
 \subsection{Configuration Téléphone Clients}
 	\subsubsection{Téléphone logiciel Linphone}
@@ -132,6 +172,64 @@ le softphone pour le secretariat.\\
 		\includegraphics[width=0.5\textwidth]{img/linphone.png}
 		\caption{Configuration de Linphone}
 		\label{fig:lin}
+	\end{figure}\\
+
+	\subsubsection{Téléphone matériel Nortel LIP6812}
+	\subsubsection*{Inscrivez le téléphone auprès du registrar de l'IPBX}
+	Pour enregistrer le téléphone IP LG Nortel auprès du serveur IPBX, j'ai du
+	le configurer directement depuis son interface pour rentrer tous les paramètres 
+	pour qu'il puisse se connecter. \\
+	Voici les différents paramètres que j'ai dû configurer pour que le téléphone remonte :
+
+
+	\subsubsection{Téléphone Matériel Cisco 7941G}
+	\subsubsection*{Etudiez la procédure d'installation d'un nouveau firmware}
+
+	\subsubsection*{Installez, avec toutes les précautions nécessaires, le dernier firmware SIP}
+
+	\subsubsection*{Inscrivez le téléphone auprès du registar de l'IPBX}
+	
+	\subsubsection*{Parametrez les touches d'appels rapides et collez des étiquettes}
+
+\subsection{Validation des appels}
+Nous avons donc testé les différents appels internes possibles, et tout 
+est fonctionnel, j'arrive bien à joindre la secrétaire, depuis le 
+softphone et inversenement. 
+
+\newpage
+\section{Objectif 2 : Configuration inter-sites}
+	\subsection{Appels inter-sites}
+	\subsubsection{Sur l'IPBX, inscrire le faiceau SIP}
+	Pour inscrire mon faisceau SIP auprès de l'opérateur Voix, j'ai 
+	configuré un nouveau contexte \textbf{[operateurvoix]} et que j'ai configuré
+	comme ci-arpès : 
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.4\textwidth]{img/inter.png}
+		\caption{Configuration de l'opérateur Voix}
+		\label{fig:opvoix}
 	\end{figure}
+	Je définis à chaque fois les bons paramètres que je vais expliquer ci-après :
+	\begin{itemize}
+		\item \texttt{remote\_hosts} : Définis l'adresse IP du serveur Opérateur Voix
+		\item \texttt{outbound\_auth} : Définis le nom d'utilisateur et le mot de passe pour communiquer à travers le serveur voix
+	\end{itemize}
+
+
+	\subsubsection{Dans le plan de numérotation, ajoutez le préfix *}
+	Dans mon fichier \textbf{extensions.conf}, j'ai donc rajouté la ligne suivante
+	dans le contexte \textbf{[default]} :
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/exten-op.png}
+		\caption{Configuration de l'opérateur voix dans extensions.conf}
+		\label{fig:op-ext}
+	\end{figure}\\
+	\begin{itemize}
+		\item "exten => \_.,1," signifie que cette extension est associée à tout numéro composé, quelle que soit la longueur et les chiffres qui le composent. Le "" signifie n'importe quel nombre et le "." signifie n'importe quelle longueur.
+		\item "Dial(PJSIP/\${EXTEN:1}@operateurvoix)" signifie que l'appel sera acheminé via le protocole PJSIP en utilisant l'opérateur de voix défini. La variable "\${EXTEN:1}" est utilisée pour extraire le numéro composé par l'utilisateur, en excluant le premier caractère qui est un "\_".
+	\end{itemize}
+
 
 \end{document}
