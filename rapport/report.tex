@@ -466,7 +466,91 @@ softphone et inversenement.
 	conversation téléphonique. Les fichiers d'enregistrements seront retrouvables
 	dans le répertoire \textbf{/var/spool/asterisk/monitor}.\\
 
+	\newpage
+	\subsection{Prédécroché}
+	\subsubsection{Enregistrez un message d'accueil personnalisé}
+	Je me suis donc crée un nouveau message d'accueil différent de celui de mise
+	en attente de la même manière que j'ai crée le message d'attente. Pour le message 
+	de prédécroché j'ai crée une nouvelle classe dans le fichier \textbf{musiconhold.conf} :
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/pre.png}
+		\caption{Déclaration d'un nouveau message d'accueil}
+		\label{fig:new}
+	\end{figure}\\
+	C'est exactement le même principe que pour le message de mise en attente, 
+	sauf le répertoire du fichier vu qu'il est différent est \textbf{/var/lib/asterisk/mohpre/}.
+	Ensuite, dans le fichier \textbf{extensions.conf}, j'ai modifié le plan de numéroration
+	pour rajouter la nouvelle classe du message d'accueil personnalisé : 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{img/prex.png}
+		\caption{Ajout d'un nouveau message d'accueil}
+		\label{fig:nexw}
+	\end{figure}\\
+	J'ai donc repris le plan de numérotation pour y rajouter à la fin 
+	\textbf{m(newclass)} ce qui signifie tout simplement que pendant la sonnerie
+	le message d'accueil associé au contexte \textbf{newclass} dans
+	le fichier \textbf{musiconhold.conf} sera joué chez l'appelant.\\
 
+\newpage
+\section{Objectif 4 : Boîtes vocales}
+	\subsection{Configuration serveur}
+		\subsubsection{Créer une boîte vocal pour chaque utilisateurs}
+		Pour créer une boite vocal à chaque utilisateur je viens définir 
+		dans le contexte \textbf{[default]} du fichier \textbf{extensions.conf}
+		ces lignes de code : 
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.8\textwidth]{img/cont.png}
+			\caption{Ajout d'une boite vocal}
+			\label{fig:cont}
+		\end{figure}\\
+		Ces lignes signifient que pour accéder par exemple à la boite vocale
+		de l'utilisateur \textbf{TM1} ayant comme numéro \textbf{1}, il suffit
+		de composer donc le numéro \textbf{8500} qui est le numéro de boîte vocale
+		par défaut et de composer le numéro 10 qui correspond à sa boite vocale. 
+		Puis, écrire le code de la boîte vocale qui est le 1-2-3-4 que je viens
+		définir dans le fichier \textbf{voicemail.conf} :\\
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.8\textwidth]{img/voic.png}
+			\caption{Ajout de comptes et mot de passe}
+			\label{fig:voic}
+		\end{figure}\\
 
+\newpage
+\section{Conclusion générale}
+Ce projet fût pour nous tous une expérience très enrichissante. Nous avons
+fait face à différents types de problèmes que nous avons réussi à résoudre, 
+ou non. Par exemple au commencement de la SAE, nous sommes tombés face à 
+notre plus gros problème qui était le téléphone Cisco. Nous avons pris énormenent
+de temps à comprendre comment il était possible de les flasher. Une fois 
+tout monté, à savoir le serveur TFTP. Après avoir flashé les 12 téléphones, 
+nous nous sommes rendu compte qu'il n'était pas possible de les paramétrer 
+pour les connecter à nos serveurs IPBX. Nous avons donc essayé dé réflechir
+à des solutions, sans en trouver...\\
+
+L'autre gros problème que j'ai eu personnellement était le message de prédécroché
+en même temps que le transfert d'appels. Quand je mettais le bon paramètre pour 
+avoir le transfert d'appels ça fonctionnait, et dès que je rajoutais le 
+paramètre pour définir le musique de prédécroché, le transfert ne fonctionnait
+plus. J'ai réussi à résoudre ce problème en modifiant juste une virgule... 
+C'est-à-dire qu'initialement, j'avais dans mon plan de numérotation ceci :\\
+\texttt{[...]PJSIP/TM1,30,tT,m(newclass)}. J'ai trouvé qu'en écrivant
+plutôt :\\ \texttt{[...]PJSIP/TM1,30,tTm(newclass)} ça fonctionnait.
+C'est une très petite et subtile différence, mais qui a su faire la différence.\\
+
+En définitive, j'ai apprécié de projet car il était en parfaite corrélation avec
+mon alternance. En tant qu'apprenti chez Orange, j'installe une offre téléphonique
+qui se prénomme \textbf{Connect pro}. Cette offre est déstinée aux petites entreprises.
+Elle se base sur un serveur Asterisk, et donc, tout ce que je configure chez Orange
+est identique à ce que j'ai fait dans ce projet, jusqu'à même la possibilité
+d'envoyer par mails les messages vocaux. La seule différence, est que chez Orange
+tout a fait pour que l'installation soit la plus simple possible et rapide. 
+Nous, les techniciens, passons tous par une interface graphique, tandis que 
+pendant le projet tout était en ligne de commande. Je suis donc très 
+content d'avoir pu voir et comprendre comment tout ce que je fais chez Orange fonctionne
+réllemment en arrière plan, coté serveur. 
 
 \end{document}

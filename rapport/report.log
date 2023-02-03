@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.2)  3 FEB 2023 20:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.2)  3 FEB 2023 21:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -381,16 +381,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 3.
-)
-\tf@toc=\write4
-\openout4 = `report.toc'.
-
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.42 \newpage
-              [1]
+l.38 ...Configuration serveur}{21}{subsection.4.1}
+                                                  % [1])
+\tf@toc=\write4
+\openout4 = `report.toc'.
+
+ [2]
 Underfull \hbox (badness 10000) in paragraph at lines 44--54
 
  []
@@ -418,8 +418,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--82
 
  []
 
-[2]
-<img/pjsip.png, id=195, 268.00125pt x 65.24374pt>
+[3]
+<img/pjsip.png, id=229, 268.00125pt x 65.24374pt>
 File: img/pjsip.png Graphic file (type png)
 <use img/pjsip.png>
 Package pdftex.def Info: img/pjsip.png  used on input line 86.
@@ -444,8 +444,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-[3 <./img/pjsip.png>]
-<img/wizard.png, id=204, 232.87pt x 570.13pt>
+[4 <./img/pjsip.png>]
+<img/wizard.png, id=238, 232.87pt x 570.13pt>
 File: img/wizard.png Graphic file (type png)
 <use img/wizard.png>
 Package pdftex.def Info: img/wizard.png  used on input line 105.
@@ -455,7 +455,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--109
 
  []
 
-[4 <./img/wizard.png>]
+[5 <./img/wizard.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
@@ -500,8 +500,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
-[5]
-<img/extensions.png, id=216, 253.94875pt x 53.19875pt>
+[6]
+<img/extensions.png, id=251, 253.94875pt x 53.19875pt>
 File: img/extensions.png Graphic file (type png)
 <use img/extensions.png>
 Package pdftex.def Info: img/extensions.png  used on input line 143.
@@ -516,7 +516,7 @@ Overfull \hbox (18.40485pt too wide) in paragraph at lines 151--157
 \T1/cmr/m/n/12 fec-tué à cet ex-ten-sion, les ins-truc-tions sui-vantes se-ront exé-cu-tées. \T1/cmr/bx/n/12 Dial(PJSIP/TM1)
  []
 
-<img/linphone.png, id=217, 448.67625pt x 436.63126pt>
+<img/linphone.png, id=252, 448.67625pt x 436.63126pt>
 File: img/linphone.png Graphic file (type png)
 <use img/linphone.png>
 Package pdftex.def Info: img/linphone.png  used on input line 172.
@@ -529,23 +529,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--176
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/IMG_0512.jpeg, id=218, 4047.12pt x 3035.34pt>
+<img/IMG_0512.jpeg, id=253, 4047.12pt x 3035.34pt>
 File: img/IMG_0512.jpeg Graphic file (type jpg)
 <use img/IMG_0512.jpeg>
 Package pdftex.def Info: img/IMG_0512.jpeg  used on input line 187.
 (pdftex.def)             Requested size: 167.2989pt x 125.46869pt.
-<img/IMG_0513.jpeg, id=219, 4047.12pt x 3035.34pt>
+<img/IMG_0513.jpeg, id=254, 4047.12pt x 3035.34pt>
 File: img/IMG_0513.jpeg Graphic file (type jpg)
 <use img/IMG_0513.jpeg>
 Package pdftex.def Info: img/IMG_0513.jpeg  used on input line 194.
 (pdftex.def)             Requested size: 167.2989pt x 125.46869pt.
-<img/IMG_0514.jpeg, id=220, 4047.12pt x 3035.34pt>
+<img/IMG_0514.jpeg, id=255, 4047.12pt x 3035.34pt>
 File: img/IMG_0514.jpeg Graphic file (type jpg)
 <use img/IMG_0514.jpeg>
 Package pdftex.def Info: img/IMG_0514.jpeg  used on input line 203.
 (pdftex.def)             Requested size: 167.2989pt x 125.46869pt.
-[6 <./img/extensions.png>] [7 <./img/linphone.png> <./img/IMG_0512.jpeg>] [8 <./img/IMG_0513.jpeg> <./img/IMG_0514.jpeg>]
-<img/85DFF5EE-EF97-4E83-9172-4FDA03718B73_1_105_c.jpeg, id=243, 770.88pt x 1027.84pt>
+[7 <./img/extensions.png>] [8 <./img/linphone.png> <./img/IMG_0512.jpeg>] [9 <./img/IMG_0513.jpeg> <./img/IMG_0514.jpeg>]
+<img/85DFF5EE-EF97-4E83-9172-4FDA03718B73_1_105_c.jpeg, id=277, 770.88pt x 1027.84pt>
 File: img/85DFF5EE-EF97-4E83-9172-4FDA03718B73_1_105_c.jpeg Graphic file (type jpg)
 <use img/85DFF5EE-EF97-4E83-9172-4FDA03718B73_1_105_c.jpeg>
 Package pdftex.def Info: img/85DFF5EE-EF97-4E83-9172-4FDA03718B73_1_105_c.jpeg  used on input line 220.
@@ -555,18 +555,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--231
 
  []
 
-<img/F316F6A2-F9B9-4515-9004-3596AD28EBC8_1_105_c.jpeg, id=244, 770.88pt x 1027.84pt>
+<img/F316F6A2-F9B9-4515-9004-3596AD28EBC8_1_105_c.jpeg, id=278, 770.88pt x 1027.84pt>
 File: img/F316F6A2-F9B9-4515-9004-3596AD28EBC8_1_105_c.jpeg Graphic file (type jpg)
 <use img/F316F6A2-F9B9-4515-9004-3596AD28EBC8_1_105_c.jpeg>
 Package pdftex.def Info: img/F316F6A2-F9B9-4515-9004-3596AD28EBC8_1_105_c.jpeg  used on input line 241.
 (pdftex.def)             Requested size: 250.95476pt x 334.59297pt.
-[9 <./img/85DFF5EE-EF97-4E83-9172-4FDA03718B73_1_105_c.jpeg>] [10 <./img/F316F6A2-F9B9-4515-9004-3596AD28EBC8_1_105_c.jpeg>]
-<img/inter.png, id=256, 295.1025pt x 218.8175pt>
+[10 <./img/85DFF5EE-EF97-4E83-9172-4FDA03718B73_1_105_c.jpeg>] [11 <./img/F316F6A2-F9B9-4515-9004-3596AD28EBC8_1_105_c.jpeg>]
+<img/inter.png, id=290, 295.1025pt x 218.8175pt>
 File: img/inter.png Graphic file (type png)
 <use img/inter.png>
 Package pdftex.def Info: img/inter.png  used on input line 261.
 (pdftex.def)             Requested size: 167.2989pt x 124.05281pt.
-<img/exten-op.png, id=257, 393.47pt x 20.075pt>
+<img/exten-op.png, id=291, 393.47pt x 20.075pt>
 File: img/exten-op.png Graphic file (type png)
 <use img/exten-op.png>
 Package pdftex.def Info: img/exten-op.png  used on input line 277.
@@ -581,8 +581,8 @@ Overfull \hbox (4.10397pt too wide) in paragraph at lines 283--284
 []\T1/cmr/bx/n/12 Dial(PJSIP/$EXTEN :1@ope-ra-teur-voix) \T1/cmr/m/n/12 si-gni-fie que l'ap-pel sera ache-
  []
 
-[11 <./img/inter.png> <./img/exten-op.png>]
-<img/externes.png, id=266, 378.41376pt x 17.06375pt>
+[12 <./img/inter.png> <./img/exten-op.png>]
+<img/externes.png, id=301, 378.41376pt x 17.06375pt>
 File: img/externes.png Graphic file (type png)
 <use img/externes.png>
 Package pdftex.def Info: img/externes.png  used on input line 298.
@@ -602,8 +602,8 @@ Overfull \hbox (29.19247pt too wide) in paragraph at lines 305--306
 \T1/cmr/m/n/12 po-ser un ap-pel vers une des-ti-na-tion don-née. \T1/cmr/bx/n/12 PJ-SIP/$EXTEN@operateurvoix
  []
 
-[12 <./img/externes.png>]
-<img/tT.png, id=274, 302.12875pt x 57.21375pt>
+[13 <./img/externes.png>]
+<img/tT.png, id=308, 302.12875pt x 57.21375pt>
 File: img/tT.png Graphic file (type png)
 <use img/tT.png>
 Package pdftex.def Info: img/tT.png  used on input line 320.
@@ -623,13 +623,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 337--342
 
  []
 
-[13 <./img/tT.png>]
-<img/IMG_0508.jpeg, id=281, 4047.12pt x 3035.34pt>
+[14 <./img/tT.png>]
+<img/IMG_0508.jpeg, id=316, 4047.12pt x 3035.34pt>
 File: img/IMG_0508.jpeg Graphic file (type jpg)
 <use img/IMG_0508.jpeg>
 Package pdftex.def Info: img/IMG_0508.jpeg  used on input line 350.
 (pdftex.def)             Requested size: 167.2989pt x 125.46869pt.
-<img/IMG_0509.jpeg, id=282, 4047.12pt x 3035.34pt>
+<img/IMG_0509.jpeg, id=317, 4047.12pt x 3035.34pt>
 File: img/IMG_0509.jpeg Graphic file (type jpg)
 <use img/IMG_0509.jpeg>
 Package pdftex.def Info: img/IMG_0509.jpeg  used on input line 358.
@@ -639,12 +639,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 345--362
 
  []
 
-<img/IMG_0510.jpeg, id=283, 4047.12pt x 3035.34pt>
+<img/IMG_0510.jpeg, id=318, 4047.12pt x 3035.34pt>
 File: img/IMG_0510.jpeg Graphic file (type jpg)
 <use img/IMG_0510.jpeg>
 Package pdftex.def Info: img/IMG_0510.jpeg  used on input line 367.
 (pdftex.def)             Requested size: 292.77629pt x 219.58177pt.
-[14 <./img/IMG_0508.jpeg> <./img/IMG_0509.jpeg>]
+[15 <./img/IMG_0508.jpeg> <./img/IMG_0509.jpeg>]
 Underfull \hbox (badness 10000) in paragraph at lines 379--382
 
  []
@@ -654,8 +654,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 384--388
 
  []
 
-[15 <./img/IMG_0510.jpeg>]
-<img/music.png, id=295, 275.0275pt x 71.26625pt>
+[16 <./img/IMG_0510.jpeg>]
+<img/music.png, id=330, 275.0275pt x 71.26625pt>
 File: img/music.png Graphic file (type png)
 <use img/music.png>
 Package pdftex.def Info: img/music.png  used on input line 395.
@@ -675,8 +675,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 403--404
 
  []
 
-[16 <./img/music.png>]
-<img/grp.png, id=304, 173.64874pt x 107.40125pt>
+[17 <./img/music.png>]
+<img/grp.png, id=338, 173.64874pt x 107.40125pt>
 File: img/grp.png Graphic file (type png)
 <use img/grp.png>
 Package pdftex.def Info: img/grp.png  used on input line 414.
@@ -686,17 +686,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 410--424
 
  []
 
-<img/lgrp.png, id=305, 203.76125pt x 35.13126pt>
+<img/lgrp.png, id=339, 203.76125pt x 35.13126pt>
 File: img/lgrp.png Graphic file (type png)
 <use img/lgrp.png>
 Package pdftex.def Info: img/lgrp.png  used on input line 430.
 (pdftex.def)             Requested size: 250.95476pt x 43.27013pt.
-[17 <./img/grp.png> <./img/lgrp.png>]
+[18 <./img/grp.png> <./img/lgrp.png>]
 Overfull \hbox (20.40724pt too wide) in paragraph at lines 438--443
 \T1/cmtt/m/n/12 PJSIP/TL1 application Playback demo-congrats\T1/cmr/m/n/12 . Sur mon poste TM1BIS, lorsque
  []
 
-<img/monitor.png, id=314, 323.2075pt x 51.19125pt>
+<img/monitor.png, id=349, 323.2075pt x 51.19125pt>
 File: img/monitor.png Graphic file (type png)
 <use img/monitor.png>
 Package pdftex.def Info: img/monitor.png  used on input line 453.
@@ -711,26 +711,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 460--468
 
  []
 
-[18 <./img/monitor.png>] (./report.aux)
+[19 <./img/monitor.png>]
+<img/pre.png, id=356, 281.05pt x 72.27pt>
+File: img/pre.png Graphic file (type png)
+<use img/pre.png>
+Package pdftex.def Info: img/pre.png  used on input line 477.
+(pdftex.def)             Requested size: 292.77629pt x 75.28912pt.
+<img/prex.png, id=357, 405.515pt x 53.19875pt>
+File: img/prex.png Graphic file (type png)
+<use img/prex.png>
+Package pdftex.def Info: img/prex.png  used on input line 487.
+(pdftex.def)             Requested size: 334.60422pt x 43.8968pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--495
+
+ []
+
+[20 <./img/pre.png> <./img/prex.png>]
+<img/cont.png, id=366, 213.79875pt x 53.19875pt>
+File: img/cont.png Graphic file (type png)
+<use img/cont.png>
+Package pdftex.def Info: img/cont.png  used on input line 505.
+(pdftex.def)             Requested size: 334.60422pt x 83.26488pt.
+<img/voic.png, id=367, 400.49625pt x 73.27374pt>
+File: img/voic.png Graphic file (type png)
+<use img/voic.png>
+Package pdftex.def Info: img/voic.png  used on input line 517.
+(pdftex.def)             Requested size: 334.60422pt x 61.22191pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--521
+
+ []
+
+[21 <./img/cont.png> <./img/voic.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 524--533
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--543
+
+ []
+
+[22] (./report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: D9B3640E7F88B346161B3C4569DD263E;8951.
+(rerunfilecheck)             Checksum: 5046BDD53F380B21C26E64D1C5C45325;10211.
  ) 
 Here is how much of TeX's memory you used:
- 13616 strings out of 478268
- 219928 string characters out of 5846348
- 530403 words of memory out of 5000000
- 31580 multiletter control sequences out of 15000+600000
+ 13667 strings out of 478268
+ 220677 string characters out of 5846348
+ 531674 words of memory out of 5000000
+ 31614 multiletter control sequences out of 15000+600000
  481868 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,11n,63p,728b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,12n,63p,728b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on report.pdf (19 pages, 16488219 bytes).
+Output written on report.pdf (23 pages, 16664788 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 313 compressed objects within 4 object streams
- 78 named destinations out of 1000 (max. 500000)
- 365 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 455 PDF objects out of 1000 (max. 8388607)
+ 362 compressed objects within 4 object streams
+ 92 named destinations out of 1000 (max. 500000)
+ 433 words of extra memory for PDF output out of 10000 (max. 10000000)
 
