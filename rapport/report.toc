@@ -9,12 +9,16 @@
 \contentsline {subsubsection}{\numberline {1.2.1}Téléphone logiciel Linphone}{6}{subsubsection.1.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2}Téléphone matériel Nortel LIP6812}{7}{subsubsection.1.2.2}%
 \contentsline {subsubsection}{\numberline {1.2.3}Téléphone Matériel Cisco 7941G}{9}{subsubsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.3}Validation des appels}{9}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Objectif 2 : Configuration inter-sites}{10}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Appels inter-sites}{10}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Sur l'IPBX, inscrire le faiceau SIP}{10}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Dans le plan de numérotation, ajoutez le préfix *}{10}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Validez les appels entrants et sortants entre cabinets médicaux}{11}{subsubsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.2}Appels externes}{11}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Ajoutez les numéros à 10 chiffres pour les appels extérieurs via le faisceau}{11}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Validez les appels externes vers (0112345678)}{11}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {1.3}Validation des appels}{10}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Objectif 2 : Configuration inter-sites}{11}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Appels inter-sites}{11}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Sur l'IPBX, inscrire le faiceau SIP}{11}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Dans le plan de numérotation, ajoutez le préfix *}{11}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Validez les appels entrants et sortants entre cabinets médicaux}{12}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Appels externes}{12}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Ajoutez les numéros à 10 chiffres pour les appels extérieurs via le faisceau}{12}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Validez les appels externes vers (0112345678)}{12}{subsubsection.2.2.2}%
+\contentsline {section}{\numberline {3}Objectif 3 : Fonctions téléphoniques}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Transfert d'appels}{13}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Activez le transfert d'appels côté IPBX}{13}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Validez le fonctionnement dans l'ensemble des cas possibles}{13}{subsubsection.3.1.2}%

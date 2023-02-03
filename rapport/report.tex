@@ -210,12 +210,38 @@ le softphone pour le secretariat.\\
 
 	\subsubsection{Téléphone Matériel Cisco 7941G}
 	\subsubsection*{Etudiez la procédure d'installation d'un nouveau firmware}
-
-	\subsubsection*{Installez, avec toutes les précautions nécessaires, le dernier firmware SIP}
-
-	\subsubsection*{Inscrivez le téléphone auprès du registar de l'IPBX}
+	Pour installer un nouveau firmware sur le Cisco 7941G. Il a d'abord fallu 
+	monter un serveur TFTP afin de pouvoir envoyer le firmware sur le téléphone.
+	Nous avons donc monter un serveur TFTP à l'aide de mes camarades, sur windows comme
+	le démontre la photo qui suit : 
 	
-	\subsubsection*{Parametrez les touches d'appels rapides et collez des étiquettes}
+	\begin{figure}[h]
+		\centering
+		{\includegraphics[width=0.6\textwidth]{img/85DFF5EE-EF97-4E83-9172-4FDA03718B73_1_105_c.jpeg}}
+		\caption{Configuration du serveur TFTP}
+		\label{fig:tftp}
+	\end{figure}
+	
+	Puis, nous avons envoyer la configuration dans les téléphones. 
+	L'envoie du nouveau firmware a donc bel et bien fonctionné. Cependant,
+	nous avons eu des problèmes pour configurer le téléphone pour pouvoir
+	l'enregistrer auprès du serveur Astetisk. Etant bloqués par la configuration
+	du téléphone. Nous n'avons pas réussi à l'enregistrer. Même après avoir
+	essayé de différentes manières, comme en essayant plusieurs firmwares.\\ 
+
+
+	Comme nous pouvons le constater sur le photo qui suit, nous avons bien
+	réussi à flasher les téléphones. Pour pouvoir les tenir prêt au flash
+	il a fallu maintenir le bouton "\#" pendant le démarrage du téléphone. 
+	Une fois que les boutons de volumes commençaient à clignoter il a fallu
+	faire succéder les touches suivantes : \textbf{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
+	Et, nous rentrions dans le mode de flashage comme le montre la photo qui suit : 
+	\begin{figure}[h]
+		\centering
+		{\includegraphics[width=0.6\textwidth]{img/F316F6A2-F9B9-4515-9004-3596AD28EBC8_1_105_c.jpeg}}
+		\caption{Entrée du téléphone en mode flash}
+		\label{fig:flash}
+	\end{figure}
 
 \subsection{Validation des appels}
 Nous avons donc testé les différents appels internes possibles, et tout 
@@ -282,5 +308,38 @@ softphone et inversenement.
 	\subsubsection{Validez les appels externes vers (0112345678)}
 	J'ai donc testé d'appeler les appels vers le 0212345678, le numéro hébergé par
 	Victor sur son PC. Et l'appel fonctionne parfaitement. 
+
+\newpage
+\section{Objectif 3 : Fonctions téléphoniques}
+\subsection{Transfert d'appels}
+	\subsubsection{Activez le transfert d'appels côté IPBX}
+	Pour activer le transfert d'appels côté IPBX, j'ai donc modifié les lignes suivante 
+	dans le fichier \textbf{extensions.conf} :
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/tT.png}
+		\caption{Configuration du transfert extensions.conf}
+		\label{fig:trans}
+	\end{figure}\\
+	Il ne faut aussi pas oublier de décommenter la ligne \texttt{blindxfer => \#1}
+	dans le fichier \textbf{features.conf} et dans le context \textbf{[featuremap]}.\\
+
+	J'ai modifié le plan de numérotation des téléphones en ajoutant l'option
+	\textbf{tT} pour le transfert d'appels. Désormais quand je suis en appel
+	et que je compose la touche \textbf{\#1}, suivis du numéro de téléphone
+	vers lequel je veux transférer l'appel et que je valide, l'appel est transféré.\\
+
+	En utilisant les options \textbf{tT} dans la ligne de configuration, j'autorisez 
+	les deux méthodes de transfert d'appel, soit en utilisant le code de 
+	transfert ou en utilisant la touche de transfert rapide.
+
+	\subsubsection{Validez le fonctionnement dans l'ensemble des cas possibles}
+	Pour tester les transferts d'appel, j'ai tout d'abord testé en interne de 
+	transférer mon appel vers un autre téléphone logiciel. Ce qui a fonctionné.
+	Puis, pour compléxifier un peu le sujet, j'ai demandé à un camarade 
+	de m'appeler. J'ai receptionné l'appel et j'ai transféré l'appel vers
+	une autre table. Ce qui a également fonctionné.\\
+
+	\subsubsection*{Pour chaque téléphone, définissez un numéro de transfert}
 
 \end{document}
