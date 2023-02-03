@@ -340,6 +340,133 @@ softphone et inversenement.
 	de m'appeler. J'ai receptionné l'appel et j'ai transféré l'appel vers
 	une autre table. Ce qui a également fonctionné.\\
 
-	\subsubsection*{Pour chaque téléphone, définissez un numéro de transfert}
+	\newpage
+	\subsubsection{Pour chaque téléphone, définissez un numéro de transfert}
+	Pour définir une touche rapide de transfert sur le LG Nortel. Je suis 
+	rentrer dans les paramètes, puis, j'ai cliqué sur le bouton numéro 
+	3 qui correspond à \textbf{Phone settings} : 
+	\begin{figure}[h]
+		\centering
+		\rotatebox{-90}{\includegraphics[width=0.4\textwidth]{img/IMG_0508.jpeg}}
+		\caption{Phone settings}
+		\label{fig:btnt}
+	\end{figure}\\
+	Puis, je me suis rendu dans le sous-menu 6, qui correspond à 
+	\textbf{Flexible Key Settings} : 
+	\begin{figure}[h]
+		\centering
+		\rotatebox{-90}{\includegraphics[width=0.4\textwidth]{img/IMG_0509.jpeg}}
+		\caption{Flexible Key Settings}
+		\label{fig:btnk}
+	\end{figure}\\[2cm]
+
+	J'ai ensuite choisi sur la touche que je voulais attribuer à ce raccourci
+	en cliquant sur la touche que je souhaitais :
+	\begin{figure}[h]
+		\centering
+		\rotatebox{-90}{\includegraphics[width=0.7\textwidth]{img/IMG_0510.jpeg}}
+		\caption{Bouton à associer}
+		\label{fig:btnl}
+	\end{figure}\\
+	Une fois fait je choisi le numéro que je veux associer à ce bouton 
+	et je valide. La procédure est exactement la même pour ajouter en raccourci
+	un contact, le bouton de mise en attente ou encore la bouton pour accéder à la 
+	messagerie. C'est pour cette raison que je n'expliquerai pas comment faire 
+	après quand il faudra ajouter le bouton de mise en attente. 
+
+	\subsection{Mise en attente}
+	\subsubsection{Trouvez une mise en attente personnalisée}
+	Pour la musique d'attente, j'ai décidé de la créer moi-même, en m'enregistrant
+	avec mon téléphone. Puis que un célèbre logiciel de montage \textbf{Adobe Premiere Pro}
+	j'ai rajouté une musique de fond pour donner un aspect plus professionnel.\\
+
+	\subsubsection{Encodez la musique dans le format approprié}
+	Il faut savoir que Asterisk n'accepte pas le mp3. J'ai donc converti mon fichier
+	en g722. Qui est un codec que Asterisk accepte.
+	Pour ce faire, je me suis rendu sur le site web \textbf{https://g711.org}.
+	Sur ce dernier j'ai donc converti mon audio en g722.\\
+
+	\subsubsection*{Définissez la musique par défaut}
+	Pour définir la musique d'attente par défaut. J'ai tout simplement
+	modifié premièrement dans le fichier \textbf{musiconhold.conf} le contexte 
+	\textbf{[default]} :
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/music.png}
+		\caption{Configuration du fichier musiconhold.conf}
+		\label{fig:mch}
+	\end{figure}\\
+	Voici quelques explications pour mieux comprendre ce que ces lignes de 
+	codes veulent dire :\\
+	\begin{itemize}
+		\item \textbf{mode=files} : définit le mode de lecture de la musique d'attente. Dans ce cas, le mode est "files", ce qui signifie que la musique sera lue à partir de fichiers audio.\\
+		\item \textbf{directory=/var/lib/asterisk/mohwav} : définit le chemin du répertoire où le fichier audio de la musique d'attente est stocké. (Que j'ai au préalable crée)\\
+		\item \textbf{random=yes} : définit si la musique d'attente sera jouée de manière aléatoire ou en ordre séquentiel. En utilisant "yes" pour la valeur "random", la musique d'attente sera jouée de manière aléatoire.
+	\end{itemize}
+
+	\newpage
+	\subsection{Interception d'appels}
+	\subsubsection{Définir un groupe d'appel Assistant et Secrétaire}
+	Pour défnir un groupe d'appel comprenant l'assistante et la secrétaire, j'ai
+	d'abord crée le groupe :
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{img/grp.png}
+		\caption{Déclaration du groupe}
+		\label{fig:grph}
+	\end{figure}\\
+	Je viens définir une musique de prédécroché pour ce groupe. J'ai choisi 
+	d'utiliser la musisque d'attente que j'ai crée précedemment pour faciliter 
+	l'explication. J'ai ensuite déclaré le mode de sonnerie qui est \textbf{ringall}
+	ce qui signifie que tous les membres du groupe sonneront en même temps. Puis, 
+	je viens définir le temps de sonnerie et enfin, je viens définir les membres
+	du groupe.\\
+
+	\subsubsection{Activez l'interception d'appel pour le groupe précédent}
+	Pour ce faire, j'ai juste rajouté ces lignes dans le contexte des déclaration
+	de postes concernés dans le fichier \textbf{pjsip\_wizard.conf} :
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{img/lgrp.png}
+		\caption{Activation de l'interception}
+		\label{fig:lgrph}
+	\end{figure}\\
+	Ces lignes permettent au postes qui ont ces lignes de pouvoir intercepter les appels.
+
+	\newpage
+	\subsubsection{Validez l'interception d'appels}
+	Pour pouvoir valider l'interception d'appels. J'ai généré comme vu en TP
+	un appel "démo" vers mon poste TL1 à l'aide de la commande suivante : 
+	\texttt{originate PJSIP/TL1 application Playback demo-congrats}. 
+	Sur mon poste TM1BIS, lorsque l'appel sonne chez TL1, je peux 
+	tout simplement appuyer sur \textbf{*8} pour récupérer l'appel sur TM1BIS. 
+
+	\subsection{Enregistrement de conversation}
+	\subsubsection{Activez l'enregistrement de conversation côté serveur}
+	Je n'ai malheureusement pas réussi à faire fonctionner le déclenchement
+	de l'enregistrement d'appel à partir du moment où on appuie sur une touche.
+	Cependant, j'ai réussi à faire en sorte que les appels soient tous enregistrés
+	par défauts. Pour ce faire, j'ai ajouté les lignes suivantes dans le fichier
+	\textbf{extensions.conf} :
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/monitor.png}
+		\caption{Activation de l'enregistrement d'appels}
+		\label{fig:monitor}
+	\end{figure}\\
+	En rajoutant ces lignes aux 3 numéros je défini donc que les appels
+	passés vers les 3 numéros seront tous automatiquement enregistrés.\\
+
+	La commande \textbf{MixMonitor(\${UNIQUEID}.wav)} :  permet d'enregistrer 
+	une conversation téléphonique en cours. La commande utilise la variable 
+	d'environnement \textbf{\${UNIQUEID}} pour générer un nom de fichier 
+	unique pour chaque enregistrement. Le fichier enregistré aura donc un 
+	nom de type \textbf{\${UNIQUEID}.wav}. La commande MixMonitor permet 
+	d'enregistrer à la fois les entrées et les sorties audio de la 
+	conversation téléphonique. Les fichiers d'enregistrements seront retrouvables
+	dans le répertoire \textbf{/var/spool/asterisk/monitor}.\\
+
+
+
 
 \end{document}
