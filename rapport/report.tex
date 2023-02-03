@@ -90,10 +90,10 @@ le softphone pour le secretariat.\\
 	Ce sont des entrées de configuration pour la définition d'un transport 
 	PJSIP dans le fichier de configuration d'Asterisk.
 	\begin{itemize}
-		\item \textbf{[transport-udp]} définit un nom pour le transport, "transport-udp" en l'occurrence.
-		\item \textbf{type = transport} indique le type de l'objet de configuration. Ici, il s'agit d'un transport PJSIP.
-		\item \textbf{protocol = udp} définit le protocole de transport utilisé, en l'occurrence l'UDP (User Datagram Protocol).
-		\item \textbf{bind = 0.0.0.0} définit l'interface réseau sur laquelle le transport écoutera les connexions. La valeur "0.0.0.0" signifie que le transport écoutera sur toutes les interfaces disponibles.
+		\item \textbf{[transport-udp]} définit un nom pour le transport, "transport-udp" en l'occurrence.\\
+		\item \textbf{type = transport} indique le type de l'objet de configuration. Ici, il s'agit d'un transport PJSIP.\\
+		\item \textbf{protocol = udp} définit le protocole de transport utilisé, en l'occurrence l'UDP (User Datagram Protocol).\\
+		\item \textbf{bind = 0.0.0.0} définit l'interface réseau sur laquelle le transport écoutera les connexions. La valeur "0.0.0.0" signifie que le transport écoutera sur toutes les interfaces disponibles.\\
 	\end{itemize}
 
 	\newpage 
@@ -118,13 +118,13 @@ le softphone pour le secretariat.\\
 	assez similaire pour les autres déclarations d'utilisateurs. 
 
 	\begin{itemize}
-		\item \textbf{[TL1]} : définit un nom pour l'endpoint, "TL1" en l'occurrence.
-		\item \textbf{accepts\_auth = yes} et \textbf{accepts\_registrations = yes} autorisent l'authentification et l'enregistrement des utilisateurs pour cet endpoint.
-		\item \textbf{transport = transport-udp} définit le transport PJSIP à utiliser pour acheminer les appels à travers le réseau pour cet endpoint.
-		\item \textbf{inbound\_auth/type = userpass} définit le type d'authentification pour les appels entrants à cet endpoint, en l'occurrence l'authentification par nom d'utilisateur et mot de passe.
-		\item \textbf{inbound\_auth/username = TL1} et \textbf{inbound\_auth/password = toto} définissent le nom d'utilisateur et le mot de passe pour l'authentification.
-		\item \textbf{endpoint/allow = !all,alaw} définit les codecs audio autorisés pour les appels entrant et sortant à partir de cet endpoint. \textbf{alaw} est un codec audio couramment utilisé et \textbf{!all} signifie que tous les autres codecs ne sont pas autorisés.
-		\item \textbf{aor/max\_contacts = 1} et \textbf{aor/remove\_existing = 1} définissent les paramètres de gestion des connexions pour cet endpoint. \textbf{Aor/max\_contacts = 1} signifie qu'un seul contact peut être enregistré pour cet endpoint à tout moment, tandis que \textbf{aor/remove\_existing = 1} signifie que les connexions existantes seront supprimées lorsqu'une nouvelle connexion est établie.
+		\item \textbf{[TL1]} : définit un nom pour l'endpoint, "TL1" en l'occurrence.\\
+		\item \textbf{accepts\_auth = yes} et \textbf{accepts\_registrations = yes} autorisent l'authentification et l'enregistrement des utilisateurs pour cet endpoint.\\
+		\item \textbf{transport = transport-udp} définit le transport PJSIP à utiliser pour acheminer les appels à travers le réseau pour cet endpoint.\\
+		\item \textbf{inbound\_auth/type = userpass} définit le type d'authentification pour les appels entrants à cet endpoint, en l'occurrence l'authentification par nom d'utilisateur et mot de passe.\\
+		\item \textbf{inbound\_auth/username = TL1} et \textbf{inbound\_auth/password = toto} définissent le nom d'utilisateur et le mot de passe pour l'authentification.\\
+		\item \textbf{endpoint/allow = !all,alaw} définit les codecs audio autorisés pour les appels entrant et sortant à partir de cet endpoint. \textbf{alaw} est un codec audio couramment utilisé et \textbf{!all} signifie que tous les autres codecs ne sont pas autorisés.\\
+		\item \textbf{aor/max\_contacts = 1} et \textbf{aor/remove\_existing = 1} définissent les paramètres de gestion des connexions pour cet endpoint. \textbf{Aor/max\_contacts = 1} signifie qu'un seul contact peut être enregistré pour cet endpoint à tout moment, tandis que \textbf{aor/remove\_existing = 1} signifie que les connexions existantes seront supprimées lorsqu'une nouvelle connexion est établie.\\
 		\item \textbf{endpoint/call\_group = 1} et \textbf{endpoint/pickup\_group = 1} définissent les groupes d'appels et de prise en charge pour cet endpoint. Les numéros d'identification des groupes peuvent varier selon votre configuration.\\
 	\end{itemize}
 
@@ -180,6 +180,32 @@ le softphone pour le secretariat.\\
 	le configurer directement depuis son interface pour rentrer tous les paramètres 
 	pour qu'il puisse se connecter. \\
 	Voici les différents paramètres que j'ai dû configurer pour que le téléphone remonte :
+	J'ai du rentrer dans les paramètres du téléphone en appuyant sur la touche 
+	\textbf{settings}, puis choisir le sous menu 2. \textbf{SIP configuration}
+	\begin{figure}[h]
+		\centering
+		\rotatebox{-90}{\includegraphics[width=0.4\textwidth]{img/IMG_0512.jpeg}}
+		\caption{Choix menu SIP configuration}
+		\label{fig:set}
+	\end{figure}\\
+	Ensuite, je viens sélectionner la ligne 1. \textbf{Line 1 Settings}
+	\begin{figure}[h]
+		\centering
+		\rotatebox{-90}{\includegraphics[width=0.4\textwidth]{img/IMG_0513.jpeg}}
+		\caption{Choix menu Line 1 settings}
+		\label{fig:set}
+	\end{figure}\\
+	Pour finir, je viens configurer l'ensemble des paramètes qui sont inscrits
+	comme par exemple, l'adresse IP du serveur IPBX, le nom d'utilisateur,
+	le mot de passe ainsi de suite...\\
+	\begin{figure}[h]
+		\centering
+		\rotatebox{-90}{\includegraphics[width=0.4\textwidth]{img/IMG_0514.jpeg}}
+		\caption{Configuration du Nortel}
+		\label{fig:set}
+	\end{figure}\\
+	Une fois configuré correctement le téléphone remonte automatiquement auprès
+	du serveur IPBX et nous pouvons l'utiliser pour appeler en interne. 
 
 
 	\subsubsection{Téléphone Matériel Cisco 7941G}
@@ -227,9 +253,34 @@ softphone et inversenement.
 		\label{fig:op-ext}
 	\end{figure}\\
 	\begin{itemize}
-		\item "exten => \_.,1," signifie que cette extension est associée à tout numéro composé, quelle que soit la longueur et les chiffres qui le composent. Le "" signifie n'importe quel nombre et le "." signifie n'importe quelle longueur.
-		\item "Dial(PJSIP/\${EXTEN:1}@operateurvoix)" signifie que l'appel sera acheminé via le protocole PJSIP en utilisant l'opérateur de voix défini. La variable "\${EXTEN:1}" est utilisée pour extraire le numéro composé par l'utilisateur, en excluant le premier caractère qui est un "\_".
+		\item \textbf{exten => \_.,1} signifie que cette extension est associée à tout numéro composé, quelle que soit la longueur et les chiffres qui le composent. Le "" signifie n'importe quel nombre et le "." signifie n'importe quelle longueur.
+		\item \textbf{Dial(PJSIP/\${EXTEN:1}@operateurvoix)} signifie que l'appel sera acheminé via le protocole PJSIP en utilisant l'opérateur de voix défini. La variable "\${EXTEN:1}" est utilisée pour extraire le numéro composé par l'utilisateur, en excluant le premier caractère qui est un "\_".
 	\end{itemize}
 
+	\subsubsection{Validez les appels entrants et sortants entre cabinets médicaux}
+	Suite à la configuration de l'opérateur voix, j'ai pu tester les appels entrants et sortants entre les différents
+	cabinets de mes camarades. Tout est fonctionnel. Si par exemple je veux joindre
+	Victor Uetwiller à la table7. Je compose \texttt{**72} et j'arrive bien
+	à l'appeler. 
+
+	\subsection{Appels externes}
+	\subsubsection{Ajoutez les numéros à 10 chiffres pour les appels extérieurs via le faisceau}
+	Pour pouvoir appeler à l'éxterieur de mon faisceau les appels à 10 chiffres, j'ai ajouté la ligne
+	suivante dans le fichier \textbf{extensions.conf} :
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img/externes.png}
+		\caption{Configuration des appels à 10 chiffres extensions.conf}
+		\label{fig:exter}
+	\end{figure}\\
+
+	\begin{itemize}
+		\item \textbf{exten=>\_0.,1} définit le numéro de l'extension avec un masque de correspondance général, où \textbf{\_0.} signifie que cette extension sera activée pour tout numéro de téléphone commençant par \textbf{0}.\\
+		\item \textbf{Dial(PJSIP/\${EXTEN}@operateurvoix)} est l'instruction pour composer un appel. \textbf{Dial} est une commande intégrée d'Asterisk qui permet de composer un appel vers une destination donnée. \textbf{PJSIP/\${EXTEN}@operateurvoix} est la destination de l'appel. \textbf{PJSIP} désigne le protocole de téléphonie IP utilisé (dans ce cas, PJSIP) et \textbf{\${EXTEN}} est une variable qui contient le numéro d'appel entrant (sans le "0" initial). \textbf{Operateurvoix} est le nom d'un serveur ou d'un fournisseur de services de téléphonie IP auquel l'appel doit être dirigé.
+	\end{itemize}
+
+	\subsubsection{Validez les appels externes vers (0112345678)}
+	J'ai donc testé d'appeler les appels vers le 0212345678, le numéro hébergé par
+	Victor sur son PC. Et l'appel fonctionne parfaitement. 
 
 \end{document}

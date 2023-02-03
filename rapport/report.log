@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.2)  2 FEB 2023 20:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.2)  3 FEB 2023 09:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -259,7 +259,14 @@ Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footer
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count291
 \l__pdf_internal_box=\box52
-) (./report.aux)
+) (./report.aux
+
+LaTeX Warning: Label `fig:set' multiply defined.
+
+
+LaTeX Warning: Label `fig:set' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -412,13 +419,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--82
  []
 
 [2]
-<img/pjsip.png, id=103, 268.00125pt x 65.24374pt>
+<img/pjsip.png, id=124, 268.00125pt x 65.24374pt>
 File: img/pjsip.png Graphic file (type png)
 <use img/pjsip.png>
 Package pdftex.def Info: img/pjsip.png  used on input line 86.
 (pdftex.def)             Requested size: 250.95476pt x 61.09317pt.
- [3 <./img/pjsip.png>]
-<img/wizard.png, id=112, 232.87pt x 570.13pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+[3 <./img/pjsip.png>]
+<img/wizard.png, id=133, 232.87pt x 570.13pt>
 File: img/wizard.png Graphic file (type png)
 <use img/wizard.png>
 Package pdftex.def Info: img/wizard.png  used on input line 105.
@@ -429,8 +456,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--109
  []
 
 [4 <./img/wizard.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+ []
+
+
 Overfull \hbox (14.30177pt too wide) in paragraph at lines 127--128
 \T1/cmr/m/n/12 pa-ra-mètres de ges-tion des connexions pour cet end-point. \T1/cmr/bx/n/12 Aor/-max_contacts
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
  []
 
 
@@ -439,7 +501,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--129
  []
 
 [5]
-<img/extensions.png, id=124, 253.94875pt x 53.19875pt>
+<img/extensions.png, id=145, 253.94875pt x 53.19875pt>
 File: img/extensions.png Graphic file (type png)
 <use img/extensions.png>
 Package pdftex.def Info: img/extensions.png  used on input line 143.
@@ -454,7 +516,7 @@ Overfull \hbox (18.40485pt too wide) in paragraph at lines 151--157
 \T1/cmr/m/n/12 fec-tué à cet ex-ten-sion, les ins-truc-tions sui-vantes se-ront exé-cu-tées. \T1/cmr/bx/n/12 Dial(PJSIP/TM1)
  []
 
-<img/linphone.png, id=125, 448.67625pt x 436.63126pt>
+<img/linphone.png, id=146, 448.67625pt x 436.63126pt>
 File: img/linphone.png Graphic file (type png)
 <use img/linphone.png>
 Package pdftex.def Info: img/linphone.png  used on input line 172.
@@ -467,39 +529,83 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--176
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6 <./img/extensions.png>] [7 <./img/linphone.png>]
-<img/inter.png, id=145, 295.1025pt x 218.8175pt>
+<img/IMG_0512.jpeg, id=147, 4047.12pt x 3035.34pt>
+File: img/IMG_0512.jpeg Graphic file (type jpg)
+<use img/IMG_0512.jpeg>
+Package pdftex.def Info: img/IMG_0512.jpeg  used on input line 187.
+(pdftex.def)             Requested size: 167.2989pt x 125.46869pt.
+<img/IMG_0513.jpeg, id=148, 4047.12pt x 3035.34pt>
+File: img/IMG_0513.jpeg Graphic file (type jpg)
+<use img/IMG_0513.jpeg>
+Package pdftex.def Info: img/IMG_0513.jpeg  used on input line 194.
+(pdftex.def)             Requested size: 167.2989pt x 125.46869pt.
+<img/IMG_0514.jpeg, id=149, 4047.12pt x 3035.34pt>
+File: img/IMG_0514.jpeg Graphic file (type jpg)
+<use img/IMG_0514.jpeg>
+Package pdftex.def Info: img/IMG_0514.jpeg  used on input line 203.
+(pdftex.def)             Requested size: 167.2989pt x 125.46869pt.
+[6 <./img/extensions.png>] [7 <./img/linphone.png> <./img/IMG_0512.jpeg>] [8 <./img/IMG_0513.jpeg> <./img/IMG_0514.jpeg>] [9]
+<img/inter.png, id=181, 295.1025pt x 218.8175pt>
 File: img/inter.png Graphic file (type png)
 <use img/inter.png>
-Package pdftex.def Info: img/inter.png  used on input line 209.
+Package pdftex.def Info: img/inter.png  used on input line 235.
 (pdftex.def)             Requested size: 167.2989pt x 124.05281pt.
-<img/exten-op.png, id=146, 393.47pt x 20.075pt>
+<img/exten-op.png, id=182, 393.47pt x 20.075pt>
 File: img/exten-op.png Graphic file (type png)
 <use img/exten-op.png>
-Package pdftex.def Info: img/exten-op.png  used on input line 225.
+Package pdftex.def Info: img/exten-op.png  used on input line 251.
 (pdftex.def)             Requested size: 292.77629pt x 14.93735pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--229
+Underfull \hbox (badness 10000) in paragraph at lines 247--255
 
  []
 
-[8 <./img/inter.png> <./img/exten-op.png>] (./report.aux)
+
+Overfull \hbox (4.10397pt too wide) in paragraph at lines 257--258
+[]\T1/cmr/bx/n/12 Dial(PJSIP/$EXTEN :1@ope-ra-teur-voix) \T1/cmr/m/n/12 si-gni-fie que l'ap-pel sera ache-
+ []
+
+[10 <./img/inter.png> <./img/exten-op.png>]
+<img/externes.png, id=191, 378.41376pt x 17.06375pt>
+File: img/externes.png Graphic file (type png)
+<use img/externes.png>
+Package pdftex.def Info: img/externes.png  used on input line 272.
+(pdftex.def)             Requested size: 292.77629pt x 13.20212pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--276
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
+
+ []
+
+
+Overfull \hbox (29.19247pt too wide) in paragraph at lines 279--280
+\T1/cmr/m/n/12 po-ser un ap-pel vers une des-ti-na-tion don-née. \T1/cmr/bx/n/12 PJ-SIP/$EXTEN@operateurvoix
+ []
+
+[11 <./img/externes.png>] (./report.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: D28DD785ECF2275B9827C354C653E7C0;3755.
+(rerunfilecheck)             Checksum: BC15E9EA21BEE501845BDD7FC98DD49F;5108.
  ) 
 Here is how much of TeX's memory you used:
- 13447 strings out of 478268
- 216498 string characters out of 5846348
- 521569 words of memory out of 5000000
- 31466 multiletter control sequences out of 15000+600000
+ 13493 strings out of 478268
+ 217335 string characters out of 5846348
+ 524759 words of memory out of 5000000
+ 31496 multiletter control sequences out of 15000+600000
  481868 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,11n,63p,540b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,11n,63p,728b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on report.pdf (9 pages, 574904 bytes).
+Output written on report.pdf (12 pages, 7988032 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 207 compressed objects within 3 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 203 words of extra memory for PDF output out of 10000 (max. 10000000)
 
