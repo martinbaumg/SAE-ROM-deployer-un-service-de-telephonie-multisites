@@ -53,7 +53,7 @@ Windows, Linux et Mac. Ce softphone est connecté sur le même réseau que notre
 IPBX.\\
 
 Chaque membre de la SAE doit choisir un contexte de travail différent. J'ai pour
-ma part choisi d'être la table 1, le médecin généraliste. De plus, nous 
+ma part choisi d'être la table 1, le médecin généraliste. Nous 
 avons donc ces 3 postes IP pour illustrer un vrai cabinet. C'est-à-dire que nous
 avons un poste physique pour le praticien, un poste physique pour l'assistant et
 le softphone pour le secretariat.\\
@@ -88,7 +88,7 @@ le softphone pour le secretariat.\\
 		\label{fig:pjsip}
 	\end{figure}\\
 	Ce sont des entrées de configuration pour la définition d'un transport 
-	PJSIP dans le fichier de configuration d'Asterisk.
+	PJSIP dans le fichier de configuration d'Asterisk.\\
 	\begin{itemize}
 		\item \textbf{[transport-udp]} définit un nom pour le transport, "transport-udp" en l'occurrence.\\
 		\item \textbf{type = transport} indique le type de l'objet de configuration. Ici, il s'agit d'un transport PJSIP.\\
@@ -526,10 +526,10 @@ fait face à différents types de problèmes que nous avons réussi à résoudre
 ou non. Par exemple au commencement de la SAE, nous sommes tombés face à 
 notre plus gros problème qui était le téléphone Cisco. Nous avons pris énormenent
 de temps à comprendre comment il était possible de les flasher. Une fois 
-tout monté, à savoir le serveur TFTP. Après avoir flashé les 12 téléphones, 
+tout monté, à savoir le serveur TFTP, et après avoir flashé les 12 téléphones, 
 nous nous sommes rendu compte qu'il n'était pas possible de les paramétrer 
-pour les connecter à nos serveurs IPBX. Nous avons donc essayé dé réflechir
-à des solutions, sans en trouver...\\
+pour les connecter à nos serveurs IPBX. Nous avons donc essayé de réflechir
+à d'autres solutions, sans en trouver...\\
 
 L'autre gros problème que j'ai eu personnellement était le message de prédécroché
 en même temps que le transfert d'appels. Quand je mettais le bon paramètre pour 
@@ -539,9 +539,9 @@ plus. J'ai réussi à résoudre ce problème en modifiant juste une virgule...
 C'est-à-dire qu'initialement, j'avais dans mon plan de numérotation ceci :\\
 \texttt{[...]PJSIP/TM1,30,tT,m(newclass)}. J'ai trouvé qu'en écrivant
 plutôt :\\ \texttt{[...]PJSIP/TM1,30,tTm(newclass)} ça fonctionnait.
-C'est une très petite et subtile différence, mais qui a su faire la différence.\\
+C'est une très petite et subtile modification, mais qui a su faire la différence.\\
 
-En définitive, j'ai apprécié de projet car il était en parfaite corrélation avec
+En définitive, j'ai apprécié ce projet car il était en parfaite corrélation avec
 mon alternance. En tant qu'apprenti chez Orange, j'installe une offre téléphonique
 qui se prénomme \textbf{Connect pro}. Cette offre est déstinée aux petites entreprises.
 Elle se base sur un serveur Asterisk, et donc, tout ce que je configure chez Orange
